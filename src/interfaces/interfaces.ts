@@ -1,4 +1,14 @@
-export interface PokemonApi {
+export interface ResponsePokemons {
+  data: Pokemon[];
+  total: number;
+  page: number;
+  totalPages: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+}
+
+
+export interface Pokemon {
   id: number
   nombre: string
   descripcion: string
@@ -11,3 +21,5 @@ export interface PokemonApi {
   defensaEspecial: number
   velocidad: number
 }
+
+
