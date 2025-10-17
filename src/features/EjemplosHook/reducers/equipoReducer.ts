@@ -1,4 +1,3 @@
-import { Switch } from '@mantine/core';
 import type { PokemonSimple } from '../../cuadricula/pokemon.dummy';
 
 
@@ -17,7 +16,7 @@ export interface PokemonReducer extends PokemonSimple {
 export const estadoInicial: EstadoEquipo = {
     equipo: [],
     pokemonActivo: null,
-    enBatalla: false
+    enBatalla: false,
 }
 
 type ActionsTypes = | { type: "AGREGAR_POKEMON", payload: PokemonReducer }
@@ -69,6 +68,7 @@ export const equipoReducer = (state: EstadoEquipo, action: ActionsTypes) => {
                             vida: Math.max(10, pokemon.vida - Math.floor(Math.random() * 30 + 10))
                         }
                     }
+                    return pokemon;
                 })
             };
         default: return state;
